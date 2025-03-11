@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('compare.index')" :active="request()->routeIs('compare.index')">
                         {{ __('Compare Character') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                        {{ __('User Management') }}
+                    </x-nav-link>
                 </div>
             </div>
 
