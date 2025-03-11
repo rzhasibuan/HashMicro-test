@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/compare', [\App\Http\Controllers\CharacterCompareController::class, 'index'])->name('compare.index');
+Route::post('/compare', [\App\Http\Controllers\CharacterCompareController::class, 'compare'])->name('compare.process');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
