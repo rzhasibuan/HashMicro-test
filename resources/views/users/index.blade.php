@@ -15,6 +15,17 @@
         <div class="flex justify-between items-center mb-4">
             <h3 class="text-lg font-semibold">Daftar User</h3>
             <a href="{{ route('users.create') }}" class="bg-green-500 text-white px-4 py-2 rounded">Tambah User</a>
+
+            @if ($errors->any())
+            <div class="bg-red-500 text-white p-3 rounded mb-4">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
         </div>
 
         <table class="w-full border-collapse border border-gray-300">

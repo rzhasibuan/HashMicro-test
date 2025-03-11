@@ -8,6 +8,16 @@
     <div x-data="{ openModal: false }" class="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-lg my-5">
         <h2 class="text-3xl font-bold mb-6">Dashboard Keuangan</h2>
 
+        @if ($errors->any())
+        <div class="bg-red-500 text-white p-3 rounded mb-4">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         @if (session('success'))
         <div class="bg-green-500 text-white p-3 rounded mb-4">
             {{ session('success') }}

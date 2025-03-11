@@ -7,6 +7,17 @@
 
     <div class="container mx-auto px-4 pt-4">
         <div class="max-w-lg mx-auto mt-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+
+            @if ($errors->any())
+            <div class="bg-red-500 text-white p-3 rounded mb-4">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
             <form action="{{ route('compare.process') }}" method="POST" class="space-y-4">
                 @csrf
                 <div>

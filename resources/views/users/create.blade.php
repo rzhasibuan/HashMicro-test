@@ -7,6 +7,16 @@
     <div class="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg my-5">
         <h2 class="text-xl font-bold mb-4">Tambah User</h2>
 
+        @if ($errors->any())
+        <div class="bg-red-500 text-white p-3 rounded mb-4">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <form action="{{ route('users.store') }}" method="POST">
             @csrf
             <div class="mb-3">
